@@ -1,5 +1,8 @@
 # TeamZ-WebStudies.github.io
 
+![TeamZ Logo](static/img/TeamZ-Logo.png "TeamZ Logo")
+
+
 Dieses Projekt ist nur für ein Hochschul Übungs Projekt der HTW-Berlin für Web-Entwicklung.
 
 # Meilensteine
