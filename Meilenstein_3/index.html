@@ -30,222 +30,271 @@
     <!--  Favicon  -->
     <link rel="icon" type="image/png" href="../static/img/favicon.ico">
 
+    <!-- google awesome fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" rel="stylesheet"/>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- bootswatch slate theme -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+
 </head>
 <!-- html head area for meta info -->
 
 <!-- html visible content -->
 <body>
 
-<!-- Header in document center -->
-<div align="center">
-
-    <!-- Logo & Subtitle -->
-    <img src="../static/img/TeamZ-Logo.png">
-    <h2>Software Development Studio with Charm</h2>
-    <!-- Title & Subtitle -->
-
-    <!-- break line -->
-    <br/>
-
-    <!-- Main Menu in a table -->
-    <table>
-        <!-- table row with 6 column-->
-        <tr>
-            <th><a href="index.html" title="Home">Home</a></th>
-            <th><a href="#yout-want-us" title="You Want Us!">You Want Us!</a></th>
-            <th><a href="#portfolio" title="Portfolio">Portfolio</a></th>
-            <th><a href="promotion.html" title="Angebote">Angebote</a></th>
-            <th><a href="#about" title="Über">Über</a></th>
-            <th><a href="contact.html" title="Kontakt">Kontakt</a></th>
-        </tr>
-        <!-- table row -->
-    </table>
-    <!-- Main Menu -->
-
-</div>
-<!-- Header -->
-
-<hr>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-expand-lg navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <p class="logo">Team</p>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#yout-want-us">You Want Us!</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#yout-want-us">You Want Us!</a></li>
+                <li><a href="#yout-want-us">You Want Us!</a></li>
+                <li class="dropdown">
+                    <a href="promotion.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Angebote <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Web Entwicklung</a></li>
+                        <li><a href="#">Desktop App</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<!-- Fixed navbar -->
 
 <!-- Content -->
-<article>
+<div class="container">
+    <article>
 
-    <!-- article header -->
-    <header>
-        <div align="center">
-            <h3>Software Entwickler Sudio</h3>
-            <p>Coding for Learning</p>
+        <div class="w3-content" style="max-width:1200px">
+            <img class="mySlides" src="../static/img/portfolio/code-2620118_640.jpg" style="width:100%">
+            <img class="mySlides" src="../static/img/portfolio/tree-2647471_640.png" style="width:100%">
+            <img class="mySlides" src="../static/img/portfolio/mockup-2824850_640.jpg" style="width:100%">
+
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col s4">
+                    <img class="demo w3-opacity"
+                         src="../static/img/portfolio/code-2620118_640.jpg" onclick="currentDiv(1)">
+                </div>
+                <div class="w3-col s4">
+                    <img class="demo w3-opacity"
+                         src="../static/img/portfolio/tree-2647471_640.png" onclick="currentDiv(2)">
+                </div>
+                <div class="w3-col s4">
+                    <img class="demo w3-opacity"
+                         src="../static/img/portfolio/mockup-2824850_640.jpg" onclick="currentDiv(3)">
+                </div>
+            </div>
         </div>
-    </header>
-    <!-- article header -->
 
-    <!-- Intro -->
-    <section id="intro">
-
-        <!-- Intro Video -->
-        <div align="center">
-            <video width="640" height="480" controls>
-                <source src="../static/video/teamZ_intro.webm" type="video/webm">
-                <source src="../static/video/teamZ_intro.mp4" type="video/mp4">
-                <source src="../static/video/teamZ_intro..ogg" type="video/ogg">
-                Hier würde normalerweise ein Video laufen, wenn dein Browser dies nur Unterstützen würde :(
-            </video>
-        </div>
-        <!-- Intro Video -->
-
-        <!-- Quote -->
-        <blockquote cite="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io">
-            Webentwickler Studenten @ HTW-Berlin. Coding with charm ;)
-        </blockquote>
-        <!-- Quote -->
-
-        <p>Du Suchst es, du bekommst es</p>
-        <ol>
-            <li>Charm</li>
-            <li>Professionalität</li>
-            <li>Sexy Apps nur für DICH!</li>
-        </ol>
-    </section>
-    <!-- Intro -->
-
-    <!-- You Want Us! -->
-    <section id="yout-want-us">
-
-        <!-- header level 2 with underline text -->
-        <h2>
-            <ins>You Want Us!!!</ins>
-        </h2>
-
-        <p><b>Cheap & Sexy</b> Dev Team</p>
-        <ol>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-            <li>Vestibulum auctor dapibus neque.</li>
-        </ol>
-
-        <!-- Demo code -->
-        <code>
-            public class WeAreTheBest implements TeamZ {
-
-            public void charm () {
-            return this.us;
-            }
-
-            public void sexy () {
-            return this.us;
-            }
-
-            public void professional () {
-            return this.us;
-            }
-            }
-        </code>
-        <!-- Demo code -->
-
-    </section>
-    <!-- You Want Us! -->
-
-    <!-- portfolio -->
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-
-        <!-- portfolio in spoiler maximized -->
-        <details open>
-            <!-- image with caption -->
+        <!-- article header -->
+        <header>
             <div align="center">
-
-                <figure>
-                    <img src="../static/img/portfolio/code-2620118_640.jpg" alt="Code with the best" width="640"
-                         height="426">
-                    <figcaption>
-                        <a about="_blank" href="https://pixabay.com/en/code-coding-programming-css-2620118/">StockSnap
-                            @ pixabay.com </a>
-                    </figcaption>
-                </figure>
-
-                <summary>
-                    Wir arbeiten State-of-Art mit den effektivsten Tools zum schnellen & Professionellen
-                    coden um Ihnen die besten Produkte zu erstellen, damit Sie weniger arbeiten müssen ;)
-                </summary>
-
+                <h3>Software Entwickler Sudio</h3>
+                <p>Coding for Learning</p>
             </div>
-            <!-- image with caption -->
-        </details>
-        <!-- portfolio in spoiler maximized -->
+        </header>
+        <!-- article header -->
 
-        <!-- portfolio in spoiler minimized -->
-        <details>
-            <!-- image with caption -->
+        <!-- Intro -->
+        <section id="intro">
+
+            <!-- Intro Video -->
             <div align="center">
-
-                <figure>
-                    <img src="../static/img/portfolio/tree-2647471_640.png" alt="Skills" width="640"
-                         height="452">
-                    <figcaption>
-                        <a about="_blank" href="https://pixabay.com/en/tree-structure-networks-internet-2647471/">geralt
-                            @ pixabay.com </a>
-                    </figcaption>
-                </figure>
-
-                <summary>
-                    Egal welche Anforderungen Sie haben, wir haben das Know-How Ihnen ihre Träume & wünsche
-                    zu erfüllen!
-                </summary>
-
+                <video width="640" height="480" controls>
+                    <source src="../static/video/teamZ_intro.webm" type="video/webm">
+                    <source src="../static/video/teamZ_intro.mp4" type="video/mp4">
+                    <source src="../static/video/teamZ_intro..ogg" type="video/ogg">
+                    Hier würde normalerweise ein Video laufen, wenn dein Browser dies nur Unterstützen würde :(
+                </video>
             </div>
-            <!-- image with caption -->
-        </details>
-        <!-- portfolio in spoiler minimized -->
+            <!-- Intro Video -->
 
-        <!-- portfolio in spoiler minimized -->
-        <details>
-            <!-- image with caption -->
-            <div align="center">
+            <!-- Quote -->
+            <blockquote cite="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io">
+                Webentwickler Studenten @ HTW-Berlin. Coding with charm ;)
+            </blockquote>
+            <!-- Quote -->
 
-                <figure>
-                    <img src="../static/img/portfolio/mockup-2824850_640.jpg" alt="Code with the best" width="640"
-                         height="426">
-                    <figcaption>
-                        <a about="_blank" href="https://pixabay.com/en/mockup-design-device-own-layout-2824850/">ptra
-                            @ pixabay.com </a>
-                    </figcaption>
-                </figure>
+            <p>Du Suchst es, du bekommst es</p>
+            <ol>
+                <li>Charm</li>
+                <li>Professionalität</li>
+                <li>Sexy Apps nur für DICH!</li>
+            </ol>
+        </section>
+        <!-- Intro -->
 
-                <summary>Desktop, Mobil, Server oder Websites. Wir bedienen alles!</summary>
+        <!-- You Want Us! -->
+        <section id="yout-want-us">
 
-            </div>
-            <!-- image with caption -->
-        </details>
-        <!-- portfolio in spoiler minimized -->
+            <!-- header level 2 with underline text -->
+            <h2>
+                <ins>You Want Us!!!</ins>
+            </h2>
 
-    </section>
-    <!-- portfolio -->
+            <p><b>Cheap & Sexy</b> Dev Team</p>
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+                <li>Vestibulum auctor dapibus neque.</li>
+            </ol>
 
-    <!-- about -->
-    <section id="about">
-        <h2>About</h2>
+            <!-- Demo code -->
+            <pre>
+            <code class="language-java">
+                public class WeAreTheBest implements TeamZ {
 
-        <p>Wir arbeiten seid geraumer Zeit gemeisam als Professionelles Studenten Team. Das sogenannte
-            <b><i>
+                    public void charm () {
+                        return this.us;
+                    }
+
+                    public void sexy () {
+                        return this.us;
+                    }
+
+                    public void professional () {
+                        return this.us;
+                    }
+
+                }
+            </code>
+        </pre>
+            <!-- Demo code -->
+
+        </section>
+        <!-- You Want Us! -->
+
+        <!-- portfolio -->
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+
+            <!-- portfolio in spoiler maximized -->
+            <details open>
+                <!-- image with caption -->
+                <div align="center">
+
+                    <figure>
+                        <img src="../static/img/portfolio/code-2620118_640.jpg" alt="Code with the best" width="640"
+                             height="426">
+                        <figcaption>
+                            <a about="_blank" href="https://pixabay.com/en/code-coding-programming-css-2620118/">StockSnap
+                                @ pixabay.com </a>
+                        </figcaption>
+                    </figure>
+
+                    <summary>
+                        Wir arbeiten State-of-Art mit den effektivsten Tools zum schnellen & Professionellen
+                        coden um Ihnen die besten Produkte zu erstellen, damit Sie weniger arbeiten müssen ;)
+                    </summary>
+
+                </div>
+                <!-- image with caption -->
+            </details>
+            <!-- portfolio in spoiler maximized -->
+
+            <!-- portfolio in spoiler minimized -->
+            <details>
+                <!-- image with caption -->
+                <div align="center">
+
+                    <figure>
+                        <img src="../static/img/portfolio/tree-2647471_640.png" alt="Skills" width="640"
+                             height="452">
+                        <figcaption>
+                            <a about="_blank" href="https://pixabay.com/en/tree-structure-networks-internet-2647471/">geralt
+                                @ pixabay.com </a>
+                        </figcaption>
+                    </figure>
+
+                    <summary>
+                        Egal welche Anforderungen Sie haben, wir haben das Know-How Ihnen ihre Träume & wünsche
+                        zu erfüllen!
+                    </summary>
+
+                </div>
+                <!-- image with caption -->
+            </details>
+            <!-- portfolio in spoiler minimized -->
+
+            <!-- portfolio in spoiler minimized -->
+            <details>
+                <!-- image with caption -->
+                <div align="center">
+
+                    <figure>
+                        <img src="../static/img/portfolio/mockup-2824850_640.jpg" alt="Code with the best" width="640"
+                             height="426">
+                        <figcaption>
+                            <a about="_blank" href="https://pixabay.com/en/mockup-design-device-own-layout-2824850/">ptra
+                                @ pixabay.com </a>
+                        </figcaption>
+                    </figure>
+
+                    <summary>Desktop, Mobil, Server oder Websites. Wir bedienen alles!</summary>
+
+                </div>
+                <!-- image with caption -->
+            </details>
+            <!-- portfolio in spoiler minimized -->
+
+        </section>
+        <!-- portfolio -->
+
+        <!-- about -->
+        <section id="about">
+            <h2>About</h2>
+
+            <p>Wir arbeiten seid geraumer Zeit gemeisam als Professionelles Studenten Team. Das sogenannte
+                <b><i>
+                    <ins>TeamZ</ins>
+                </i></b>.
+            </p>
+            <p>Das <b><i>
                 <ins>TeamZ</ins>
-            </i></b>.
-        </p>
-        <p>Das <b><i>
-            <ins>TeamZ</ins>
-        </i></b> hat sich als Ziel gesetzt unsere Kunden jeden wunsch von den Augen
-            ab zu lesen & nichts, wirklich kein wunsch unbeantwortet zu lassen!
-        </p>
-        <ol>
-            <li>Junges Starkes Studenten Team</li>
-            <li>Preis / Leistung - unschlagbar</li>
-            <li>Charmant & Kommpetent</li>
-            <li><b>+ 20% Rabatt auch auf Tiernahrung</b></li>
-        </ol>
-        <p>Wenn das nicht überzeugt dann <a href="contact.html">kontaktiere</a> uns, du wirst es nicht bereuhen!</p>
-    </section>
-    <!-- about -->
+            </i></b> hat sich als Ziel gesetzt unsere Kunden jeden wunsch von den Augen
+                ab zu lesen & nichts, wirklich kein wunsch unbeantwortet zu lassen!
+            </p>
+            <ol>
+                <li>Junges Starkes Studenten Team</li>
+                <li>Preis / Leistung - unschlagbar</li>
+                <li>Charmant & Kommpetent</li>
+                <li><b>+ 20% Rabatt auch auf Tiernahrung</b></li>
+            </ol>
+            <p>Wenn das nicht überzeugt dann <a href="contact.html">kontaktiere</a> uns, du wirst es nicht bereuhen!</p>
+        </section>
+        <!-- about -->
 
-</article>
+    </article>
+</div>
 <!-- Content -->
 
 <hr>
@@ -264,8 +313,8 @@
             <tr>
                 <th>
                     <b>Siehe auch:</b> <br/>
-                    <a href="promotion.html">aktuelle Angebote</a> <br />
-                    <a href="contact.html">Kontakt</a> <br />
+                    <a href="promotion.html">aktuelle Angebote</a> <br/>
+                    <a href="contact.html">Kontakt</a> <br/>
                 </th>
                 <th>
                     <address>
@@ -306,6 +355,23 @@
     </div>
 </footer>
 <!-- Footer -->
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+<!-- Load code highlighting script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/components/prism-java.min.js"></script>
 
 </body>
 <!-- html visible content -->

@@ -1,0 +1,22 @@
+body {
+    padding-top: 70px;
+}
+
+.logo {
+    font-weight: normal;
+    color: #FFFFFF;
+    letter-spacing: 1pt;
+    word-spacing: 2pt;
+    font-size: 30px;
+    text-align: left;
+    font-family: helvetica, sans-serif;
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo::after{
+    content:"Z";
+    color:red;
+}
+
