@@ -1,10 +1,203 @@
 <!DOCTYPE html>
+
+<!-- html document with german content -->
 <html lang="de">
+
+<!-- html head area for meta info -->
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <!-- meta -->
+
+    <!-- document content type -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <!--meta info for responsive design -->
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+
+    <!-- keywords for search engine -->
+    <meta name="keywords" content="teamZ,kontakt"/>
+    <!-- short site description for search engine, max 180 chars-->
+    <meta name="description"
+          content="TeamZ macht dir deine Software deines Traums. Echt stark! Echt Sexy! Echt Z!">
+
+    <!--/ meta -->
+
+    <!-- Page Title -->
+    <title>TeamZ - Danke ;)</title>
+
+    <!--  Favicon  -->
+    <link rel="icon" type="image/png" href="../static/img/favicon.ico">
+
 </head>
+<!-- html head area for meta info -->
+
+<!-- html visible content -->
 <body>
 
+<!-- Header in document center -->
+<div align="center">
+
+    <!-- Title & Subtitle -->
+    <h1>TeamZ</h1>
+    <h2>Software Development Studio with Charm</h2>
+    <!-- Title & Subtitle -->
+
+    <!-- break line -->
+    <br/>
+
+    <!-- Main Menu in a table -->
+    <table>
+        <!-- table row with 6 column-->
+        <tr>
+            <th><a href="index.html" title="Home">Home</a></th>
+            <th><a href="promotion.html" title="Angebote">Angebote</a></th>
+            <th><a href="contact.html" title="Kontakt">Kontakt</a></th>
+        </tr>
+        <!-- table row -->
+    </table>
+    <!-- Main Menu -->
+
+</div>
+<!-- Header -->
+
+<hr>
+
+<!-- Content -->
+<article>
+
+    <!-- article header -->
+    <header>
+        <div align="center">
+            <h3>Danke für dein vertrauen</h3>
+            <br/>
+            <h4>Wir melden uns so schnell wie möglich bei dir! <b>NIE :)</b></h4>
+            <br/>
+        </div>
+    </header>
+    <!-- article header -->
+
+    <!-- contact content -->
+    <div align="center">
+        <table>
+            <tr>
+                <th>Label</th>
+                <th><p>Form Inhalt</p></th>
+            </tr>
+            <tr>
+                <td>Vorname:</td>
+                <td><p id="firstname">Vorname</p></td>
+            </tr>
+            <tr>
+                <td>Nachname:</td>
+                <td><p id="lastname">Nachname</p></td>
+            </tr>
+            <tr>
+                <td>Kategorie:</td>
+                <td><p id="category">Kategorie</p></td>
+            </tr>
+            <tr>
+                <td>Nachricht</td>
+                <td><p id="content">Naricht</p></td>
+            </tr>
+        </table>
+    </div>
+    <!-- contact content -->
+
+</article>
+<!-- Content -->
+
+<!-- phone image -->
+<div align="center">
+    <img src="../static/img/contact/telephone-158674_1280.png">
+</div>
+<!-- phone image -->
+
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div align="center">
+
+        <!-- Footer table -->
+        <table>
+
+            <!-- Table / Footer Title -->
+            <caption>Footer Menu</caption>
+            <!-- Table / Footer Title -->
+
+            <tr>
+                <th>
+                    <b>Siehe auch:</b> <br/>
+                    <a href="promotion.html">aktuelle Angebote</a> <br/>
+                    <a href="contact.html">Kontakt</a> <br/>
+                </th>
+                <th>
+                    <address>
+                        Gestaltet von <a href="mailto:no-mail@teamz-webstudies.github.io">TeamZ</a>.<br>
+                        HTW Berlin<br/>
+                        Wilhelminenhofstraße 75A<br/>
+                        12459, Berlin
+                    </address>
+
+                    <button type="button"
+                            onclick="alert('Nice try, aber mehr infos gibt es erst nach dem erstgespräch ;)')">More
+                        info!
+                    </button>
+                </th>
+                <th>
+                    <b>Social</b>
+                    <br/>
+                    <a href="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io" title="Github Page">
+                        <img src="../static/img/social/github.svg" width="20">
+                    </a>
+                </th>
+            </tr>
+        </table>
+        <!-- Footer table -->
+
+        <hr>
+
+        <!-- copyright -->
+        <div>
+            <a href="index.html">
+                <img src="../static/img/logo.png" width="100" alt="TeamZ">
+            </a>
+            <p>© 2017 All rights reserved. By <a
+                    href="https://teamz-webstudies.github.io/Meilenstein_2/index.html">TeamZ</a>.</p>
+        </div>
+        <!--/ copyright -->
+
+    </div>
+</footer>
+<!-- Footer -->
+
+<!-- Javascript -->
+<script>
+
+    // get params from url
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // generate html tag witch will be filled with the params from the url
+    document.getElementById("firstname").innerHTML = getParameterByName('firstname');
+    document.getElementById("lastname").innerHTML = getParameterByName('lastname');
+    document.getElementById("category").innerHTML = getParameterByName('category');
+    document.getElementById("content").innerHTML = getParameterByName('content');
+
+</script>
+<!-- Javascript -->
+
 </body>
+<!-- html visible content -->
+
 </html>
+<!-- html document with german content -->
