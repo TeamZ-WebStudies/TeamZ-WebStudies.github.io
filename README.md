@@ -8,6 +8,10 @@ Dieses Projekt ist nur für ein Hochschul Übungs Projekt der HTW-Berlin für We
 
 Link: https://teamz-webstudies.github.io/Meilenstein_2/index.html
 
+## Meilenstein 3
+
+Link: https://teamz-webstudies.github.io/Meilenstein_3/index.html
+
 # Videos konvertieren
 
 Video Datei in den gängigen 3 Formaten für HTML zu konvertieren zu
