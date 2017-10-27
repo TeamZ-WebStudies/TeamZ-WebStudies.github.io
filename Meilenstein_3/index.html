@@ -38,19 +38,21 @@
     <!-- google awesome fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- current page -->
     <!-- Hero Slider -->
     <link rel="stylesheet" href="../static/vendor/hero-slider/css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="../static/vendor/hero-slider/css/style.css"> <!-- Resource style -->
 
     <!-- code highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/themes/prism.min.css" rel="stylesheet"/>
+    <!--/ current page -->
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!-- bootswatch slate theme -->
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
 
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="../static/css/custom.css">
@@ -95,8 +97,7 @@
                         <li><a href="#">Mobile App</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="promotion.html">Angebote</a></li>
                     </ul>
                 </li>
             </ul>
@@ -112,25 +113,27 @@
 <section class="cd-hero">
     <ul class="cd-hero-slider">
 
+        <li class="selected">
+            <div class="cd-full-width">
+                <div class="logo-big">Team</div>
+                <p>Coding with Style</p>
+                <a href="#yout-want-us" class="cd-btn">get the Code</a>
+            </div> <!-- .cd-full-width -->
+        </li>
+
         <li>
             <div class="cd-half-width">
                 <h2>Slide title here</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In consequatur cumque natus!</p>
                 <a href="#0" class="cd-btn">Start</a>
-                <a href="#0" class="cd-btn secondary">Learn More</a>
+                <a href="#0" class="cd-btn secondary"
+                   onclick="alert('https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io')">
+                    Learn More</a>
             </div> <!-- .cd-half-width -->
 
             <div class="cd-half-width cd-img-container">
                 <img src="../static/vendor/hero-slider/assets/tech-1.jpg" alt="tech 1">
             </div> <!-- .cd-half-width.cd-img-container -->
-        </li>
-
-        <li class="cd-bg-video">
-            <div class="cd-full-width">
-                <div class="cd-bg-video-wrapper" data-video="../static/video/720/teamZ_intro">
-                    <!-- video element will be loaded using jQuery -->
-                </div> <!-- .cd-bg-video-wrapper -->
-            </div>
         </li>
 
         <li>
@@ -142,19 +145,15 @@
                 <h2>Slide title here</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In consequatur cumque natus!</p>
                 <a href="#0" class="cd-btn">Start</a>
-                <a href="#0" class="cd-btn secondary">Learn More</a>
+                <a href="#0" class="cd-btn secondary"
+                   onclick="alert('https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io')">
+                    Learn More</a>
             </div> <!-- .cd-half-width -->
 
         </li>
 
         <li class="cd-bg-video">
-            <div class="cd-full-width">
-                <h2>Slide title here</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, explicabo.</p>
-                <a href="#0" class="cd-btn">Learn more</a>
-            </div> <!-- .cd-full-width -->
-
-            <div class="cd-bg-video-wrapper" data-video="../static/vendor/hero-slider/assets/video/video">
+            <div class="cd-bg-video-wrapper" data-video="../static/video/720/teamZ_intro">
                 <!-- video element will be loaded using jQuery -->
             </div> <!-- .cd-bg-video-wrapper -->
         </li>
@@ -164,7 +163,9 @@
                 <h2>Slide title here</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, explicabo.</p>
                 <a href="#0" class="cd-btn">Start</a>
-                <a href="#0" class="cd-btn secondary">Learn More</a>
+                <a href="#0" class="cd-btn secondary"
+                   onclick="alert('https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io')">
+                    Learn More</a>
             </div> <!-- .cd-full-width -->
         </li>
     </ul> <!-- .cd-hero-slider -->
@@ -175,10 +176,10 @@
 
             <ul>
                 <li class="selected"><a href="#0">Intro</a></li>
-                <li><a href="#0">Tech 1</a></li>
-                <li><a href="#0">Tech 2</a></li>
+                <li><a href="#0">Mobile</a></li>
+                <li><a href="#0">Desktop 2</a></li>
                 <li><a href="#0">Video</a></li>
-                <li><a href="#0">Image</a></li>
+                <li><a href="#0">Example</a></li>
             </ul>
         </nav>
     </div> <!-- .cd-slider-nav -->
@@ -186,53 +187,52 @@
 <!-- Hero Slider -->
 
 <!-- Content -->
-<div class="container">
-    <article>
+<main>
+    <div class="container">
+        <article>
 
-        <!-- article header -->
-        <header>
-            <div align="center">
-                <h3>Software Entwickler Sudio</h3>
-                <p>Coding for Learning</p>
-            </div>
-        </header>
-        <!-- article header -->
+            <!-- article header -->
+            <header>
+                <div align="center">
+                    <h3>Software Entwickler Sudio</h3>
+                    <p>Coding for Learning</p>
+                </div>
+            </header>
+            <!-- article header -->
 
-        <!-- Intro -->
-        <section id="intro">
+            <!-- Intro -->
+            <section id="intro">
 
-            <!-- Quote -->
-            <blockquote cite="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io">
-                Webentwickler Studenten @ HTW-Berlin. Coding with charm ;)
-            </blockquote>
-            <!-- Quote -->
+                <!-- Quote -->
+                <blockquote cite="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io">
+                    Webentwickler Studenten @ HTW-Berlin. Coding with charm ;)
+                </blockquote>
+                <!-- Quote -->
 
-            <p>Du Suchst es, du bekommst es</p>
-            <ol>
-                <li>Charm</li>
-                <li>Professionalität</li>
-                <li>Sexy Apps nur für DICH!</li>
-            </ol>
-        </section>
-        <!-- Intro -->
+                <p>Du Suchst es, du bekommst es</p>
+                <ol>
+                    <li>Charm</li>
+                    <li>Professionalität</li>
+                    <li>Sexy Apps nur für DICH!</li>
+                </ol>
+            </section>
+            <!-- Intro -->
 
-        <!-- You Want Us! -->
-        <section id="yout-want-us">
+            <!-- You Want Us! -->
+            <section id="yout-want-us">
 
-            <!-- header level 2 with underline text -->
-            <h2>
-                <ins>You Want Us!!!</ins>
-            </h2>
+                <!-- header level 2 with underline text -->
+                <h2 class="logo">You ant u</h2>
 
-            <p><b>Cheap & Sexy</b> Dev Team</p>
-            <ol>
-                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                <li>Aliquam tincidunt mauris eu risus.</li>
-                <li>Vestibulum auctor dapibus neque.</li>
-            </ol>
+                <p><b>Cheap & Sexy</b> Dev Team</p>
+                <ol>
+                    <li>Dieser code spricht für sich.</li>
+                    <li>Lese und staune</li>
+                    <li>Alle Methoden haben es in sich ;)</li>
+                </ol>
 
-            <!-- Demo code -->
-            <pre>
+                <!-- Demo code -->
+                <pre>
             <code class="language-java">
 public class WeAreTheBest implements TeamZ {
 
@@ -251,113 +251,319 @@ public class WeAreTheBest implements TeamZ {
 }
             </code>
         </pre>
-            <!-- Demo code -->
+                <!-- Demo code -->
 
-        </section>
-        <!-- You Want Us! -->
+                <hr>
 
-        <!-- portfolio -->
-        <section id="portfolio">
-            <h2>Portfolio</h2>
+                <p>Einmal
+                <p class="logo">Team</p> nie wie mit jemand anderem!</p>
 
-            <!-- portfolio in spoiler maximized -->
-            <details open>
-                <!-- image with caption -->
-                <div align="center">
+            </section>
+            <!-- You Want Us! -->
 
-                    <figure>
-                        <img src="../static/img/portfolio/code-2620118_640.jpg" alt="Code with the best" width="640"
-                             height="426">
-                        <figcaption>
-                            <a about="_blank" href="https://pixabay.com/en/code-coding-programming-css-2620118/">StockSnap
-                                @ pixabay.com </a>
-                        </figcaption>
-                    </figure>
+            <hr>
 
-                    <summary>
-                        Wir arbeiten State-of-Art mit den effektivsten Tools zum schnellen & Professionellen
-                        coden um Ihnen die besten Produkte zu erstellen, damit Sie weniger arbeiten müssen ;)
-                    </summary>
+            <!-- portfolio -->
+            <section id="portfolio" class="masonry-box container">
+
+                <h2>Portfolio</h2>
+
+                <!-- masonry grid check boxen -->
+                <div class="btn-toolbar filters">
+                    <div data-toggle="buttons" class="btn-group">
+                        <label class="btn btn-default">
+                            <input type="checkbox" value="Professional">
+                            Professional
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" value="Charming">
+                            Charming
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" value="Sexy">
+                            Sexy
+                        </label>
+                    </div>
+                    <div data-toggle="buttons" class="btn-group">
+                        <label class="btn btn-default">
+                            <input type="checkbox" value="all_images">
+                            All
+                        </label>
+                    </div>
+                </div>
+                <!-- masonry grid check boxen -->
+
+                <br/>
+
+                <!-- masonry grid -->
+                <div id="masonryContainer" class="row">
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=111">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=112">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=113">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=114">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=115">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-big">
+                            <img class="round-corner" src="https://picsum.photos/250/250/?image=116">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=117">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=118">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=119">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-big">
+                            <img class="round-corner" src="https://picsum.photos/250/250/?image=120">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=121">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=121">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=122">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=123">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-big">
+                            <img class="round-corner" src="https://picsum.photos/250/250/?image=124">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=125">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=126">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-big">
+                            <img class="round-corner" src="https://picsum.photos/250/250/?image=127">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-big">
+                            <img class="round-corner" src="https://picsum.photos/250/250/?image=128">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=129">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=130">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=131">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=132">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=133">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=134">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=135">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-big">
+                            <img class="round-corner" src="https://picsum.photos/250/250/?image=136">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Charming -->
+                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=137">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=139">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=140">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=141">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Sexy -->
+                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-medium">
+                            <img class="round-corner" src="https://picsum.photos/200/200/?image=142">
+                        </div>
+                    </div>
+
+                    <!-- masonry item category Professional -->
+                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="grid-item-small">
+                            <img class="round-corner" src="https://picsum.photos/100/100/?image=143">
+                        </div>
+                    </div>
 
                 </div>
-                <!-- image with caption -->
-            </details>
-            <!-- portfolio in spoiler maximized -->
+                <!-- masonry grid -->
 
-            <!-- portfolio in spoiler minimized -->
-            <details>
-                <!-- image with caption -->
-                <div align="center">
 
-                    <figure>
-                        <img src="../static/img/portfolio/tree-2647471_640.png" alt="Skills" width="640"
-                             height="452">
-                        <figcaption>
-                            <a about="_blank" href="https://pixabay.com/en/tree-structure-networks-internet-2647471/">geralt
-                                @ pixabay.com </a>
-                        </figcaption>
-                    </figure>
+            </section>
+            <!-- portfolio -->
 
-                    <summary>
-                        Egal welche Anforderungen Sie haben, wir haben das Know-How Ihnen ihre Träume & wünsche
-                        zu erfüllen!
-                    </summary>
+            <!-- about -->
+            <section id="about">
+                <h2>About</h2>
 
-                </div>
-                <!-- image with caption -->
-            </details>
-            <!-- portfolio in spoiler minimized -->
-
-            <!-- portfolio in spoiler minimized -->
-            <details>
-                <!-- image with caption -->
-                <div align="center">
-
-                    <figure>
-                        <img src="../static/img/portfolio/mockup-2824850_640.jpg" alt="Code with the best" width="640"
-                             height="426">
-                        <figcaption>
-                            <a about="_blank" href="https://pixabay.com/en/mockup-design-device-own-layout-2824850/">ptra
-                                @ pixabay.com </a>
-                        </figcaption>
-                    </figure>
-
-                    <summary>Desktop, Mobil, Server oder Websites. Wir bedienen alles!</summary>
-
-                </div>
-                <!-- image with caption -->
-            </details>
-            <!-- portfolio in spoiler minimized -->
-
-        </section>
-        <!-- portfolio -->
-
-        <!-- about -->
-        <section id="about">
-            <h2>About</h2>
-
-            <p>Wir arbeiten seid geraumer Zeit gemeisam als Professionelles Studenten Team. Das sogenannte
-                <b><i>
+                <p>Wir arbeiten seid geraumer Zeit gemeisam als Professionelles Studenten Team. Das sogenannte
+                    <b><i>
+                        <ins>TeamZ</ins>
+                    </i></b>.
+                </p>
+                <p>Das <b><i>
                     <ins>TeamZ</ins>
-                </i></b>.
-            </p>
-            <p>Das <b><i>
-                <ins>TeamZ</ins>
-            </i></b> hat sich als Ziel gesetzt unsere Kunden jeden wunsch von den Augen
-                ab zu lesen & nichts, wirklich kein wunsch unbeantwortet zu lassen!
-            </p>
-            <ol>
-                <li>Junges Starkes Studenten Team</li>
-                <li>Preis / Leistung - unschlagbar</li>
-                <li>Charmant & Kommpetent</li>
-                <li><b>+ 20% Rabatt auch auf Tiernahrung</b></li>
-            </ol>
-            <p>Wenn das nicht überzeugt dann <a href="contact.html">kontaktiere</a> uns, du wirst es nicht bereuhen!</p>
-        </section>
-        <!-- about -->
+                </i></b> hat sich als Ziel gesetzt unsere Kunden jeden wunsch von den Augen
+                    ab zu lesen & nichts, wirklich kein wunsch unbeantwortet zu lassen!
+                </p>
+                <ol>
+                    <li>Junges Starkes Studenten Team</li>
+                    <li>Preis / Leistung - unschlagbar</li>
+                    <li>Charmant & Kommpetent</li>
+                    <li><b>+ 20% Rabatt auch auf Tiernahrung</b></li>
+                </ol>
+                <p>Wenn das nicht überzeugt dann <a href="contact.html">kontaktiere</a> uns, du wirst es nicht bereuhen!
+                </p>
+            </section>
+            <!-- about -->
 
-    </article>
-</div>
+        </article>
+    </div>
+</main>
 <!-- Content -->
 
 <!-- Footer -->
@@ -426,7 +632,7 @@ public class WeAreTheBest implements TeamZ {
         <!-- copyright -->
         <div class="col-sm-12" align="center">
             <a href="index.html">
-                <img src="../static/img/TeamZ-Logo.png" width="100" alt="TeamZ">
+                <div class="logo">Team</div>
             </a>
             <p>© 2017 All rights reserved. By <a
                     href="https://teamz-webstudies.github.io/Meilenstein_2/index.html">TeamZ</a>.</p>
@@ -445,8 +651,36 @@ public class WeAreTheBest implements TeamZ {
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 
+<!-- current page -->
 <!-- Hero Slider -->
 <script src="../static/vendor/hero-slider/js/main.js"></script>
+
+<!-- Load code highlighting script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/components/prism-java.min.js"></script>
+
+<!-- Masonry -->
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="../static/vendor/multipleFilterMasonry.js"></script>
+
+<script>
+    // initialize Masonry
+    $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        gutter: 10,
+        horizontalOrder: true,
+        originTop: false,
+    });
+
+    var $container = $('#masonryContainer');
+
+    $container.multipleFilterMasonry({
+        itemSelector: '.portfolio',
+        filtersGroupSelector: '.filters'
+    });
+</script>
+<!--/ current page -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
         integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
@@ -454,10 +688,6 @@ public class WeAreTheBest implements TeamZ {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
-
-<!-- Load code highlighting script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.3/components/prism-java.min.js"></script>
 
 </body>
 <!-- html visible content -->
