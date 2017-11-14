@@ -22,34 +22,36 @@
     <meta name="description"
           content="TeamZ macht dir deine Software deines Traums. Echt stark! Echt Sexy! Echt Z!">
 
-    <!--/ meta -->
+    <!-- / meta -->
 
-    <!-- Page Title -->
+    <!-- page Title -->
     <title>TeamZ</title>
 
-    <!--  Favicon  -->
+    <!-- favicon in browser titlebar -->
     <link rel="icon" type="image/png" href="../static/img/favicon.ico">
 
 </head>
-<!-- html head area for meta info -->
+<!-- / html head area for meta info -->
 
 <!-- html visible content -->
 <body>
 
-<!-- Header in document center -->
+<!-- header in document, center position -->
 <div align="center">
 
-    <!-- Logo & Subtitle -->
+    <!-- logo & subtitle -->
     <img src="../static/img/TeamZ-Logo.png">
     <h2>Software Development Studio with Charm</h2>
-    <!-- Title & Subtitle -->
+    <!-- / logo & subtitle -->
 
     <!-- break line -->
     <br/>
 
-    <!-- Main Menu in a table -->
+    <!-- main Menu in a table -->
     <table>
-        <!-- table row with 6 column-->
+        <!-- table row with 6 columns -->
+        <!-- menu with relativ links and labeling -->
+        <!-- #tag jumps to the specific section-id -->
         <tr>
             <th><a href="index.html" title="Home">Home</a></th>
             <th><a href="#yout-want-us" title="You Want Us!">You Want Us!</a></th>
@@ -58,16 +60,16 @@
             <th><a href="#about" title="Über">Über</a></th>
             <th><a href="contact.html" title="Kontakt">Kontakt</a></th>
         </tr>
-        <!-- table row -->
+        <!-- / table row -->
     </table>
-    <!-- Main Menu -->
+    <!-- / main Menu -->
 
 </div>
-<!-- Header -->
+<!-- / header -->
 
 <hr>
 
-<!-- Content -->
+<!-- content -->
 <article>
 
     <!-- article header -->
@@ -77,38 +79,41 @@
             <p>Coding for Learning</p>
         </div>
     </header>
-    <!-- article header -->
+    <!-- / article header -->
 
-    <!-- Intro -->
+    <!-- intro section with id-->
     <section id="intro">
 
-        <!-- Intro Video -->
+        <!-- intro video -->
         <div align="center">
+            <!-- video size, different sources & filetypes, alternative text -->
             <video width="640" height="480" controls>
                 <source src="../static/video/720/teamZ_intro.webm" type="video/webm">
                 <source src="../static/video/720/teamZ_intro.mp4" type="video/mp4">
                 <source src="../static/video/teamZ_intro..ogg" type="video/ogg">
-                Hier würde normalerweise ein Video laufen, wenn dein Browser dies nur Unterstützen würde :(
+                Hier würde normalerweise ein Video laufen, wenn dein Browser dies nur unterstützen würde :(
             </video>
         </div>
-        <!-- Intro Video -->
+        <!-- / intro video -->
 
-        <!-- Quote -->
+        <!-- quote -->
+        <!-- just for testing -->
         <blockquote cite="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io">
             Webentwickler Studenten @ HTW-Berlin. Coding with charm ;)
         </blockquote>
-        <!-- Quote -->
+        <!-- / quote -->
 
         <p>Du Suchst es, du bekommst es</p>
+        <!-- ordered list of items -->
         <ol>
             <li>Charm</li>
             <li>Professionalität</li>
             <li>Sexy Apps nur für DICH!</li>
         </ol>
     </section>
-    <!-- Intro -->
+    <!-- / intro -->
 
-    <!-- You Want Us! -->
+    <!-- you want us! section with id-->
     <section id="yout-want-us">
 
         <!-- header level 2 with underline text -->
@@ -123,7 +128,7 @@
             <li>Vestibulum auctor dapibus neque.</li>
         </ol>
 
-        <!-- Demo code -->
+        <!-- demo code -->
         <pre>
             <code>
 public class WeAreTheBest implements TeamZ {
@@ -143,38 +148,42 @@ public class WeAreTheBest implements TeamZ {
 }
             </code>
         </pre>
-        <!-- Demo code -->
+        <!-- / demo code -->
 
     </section>
-    <!-- You Want Us! -->
+    <!-- / you want us! -->
 
-    <!-- portfolio -->
+    <!-- portfolio section with id -->
     <section id="portfolio">
         <h2>Portfolio</h2>
 
-        <!-- portfolio in spoiler maximized -->
+        <!-- portfolio in spoiler, maximized with "open" -->
+        <!-- addition information opzion -->
         <details open>
             <!-- image with caption -->
             <div align="center">
 
                 <figure>
+                    <!-- image source, alternative text and image size -->
                     <img src="../static/img/portfolio/code-2620118_640.jpg" alt="Code with the best" width="640"
                          height="426">
+                    <!-- picture caption -->
                     <figcaption>
                         <a about="_blank" href="https://pixabay.com/en/code-coding-programming-css-2620118/">StockSnap
                             @ pixabay.com </a>
                     </figcaption>
                 </figure>
-
+                
+                <!-- summary, caption -->
                 <summary>
-                    Wir arbeiten State-of-Art mit den effektivsten Tools zum schnellen & Professionellen
-                    coden um Ihnen die besten Produkte zu erstellen, damit Sie weniger arbeiten müssen ;)
+                    Wir arbeiten State-of-Art mit den effektivsten Tools zum schnellen & professionellen
+                    coden, um Ihnen die besten Produkte zu erstellen - damit Sie weniger arbeiten müssen ;)
                 </summary>
 
             </div>
-            <!-- image with caption -->
+            <!-- / image with caption -->
         </details>
-        <!-- portfolio in spoiler maximized -->
+        <!-- / portfolio in spoiler maximized -->
 
         <!-- portfolio in spoiler minimized -->
         <details>
@@ -196,9 +205,9 @@ public class WeAreTheBest implements TeamZ {
                 </summary>
 
             </div>
-            <!-- image with caption -->
+            <!-- / image with caption -->
         </details>
-        <!-- portfolio in spoiler minimized -->
+        <!-- / portfolio in spoiler minimized -->
 
         <!-- portfolio in spoiler minimized -->
         <details>
@@ -217,52 +226,53 @@ public class WeAreTheBest implements TeamZ {
                 <summary>Desktop, Mobil, Server oder Websites. Wir bedienen alles!</summary>
 
             </div>
-            <!-- image with caption -->
+            <!-- / image with caption -->
         </details>
-        <!-- portfolio in spoiler minimized -->
+        <!-- / portfolio in spoiler minimized -->
 
     </section>
-    <!-- portfolio -->
+    <!-- / portfolio -->
 
     <!-- about -->
     <section id="about">
         <h2>About</h2>
 
-        <p>Wir arbeiten seid geraumer Zeit gemeisam als Professionelles Studenten Team. Das sogenannte
+        <p>Wir arbeiten seid geraumer Zeit gemeisam als professionelles Studenten Team. Das sogenannte
             <b><i>
+                <!-- underline, italic and bold -->
                 <ins>TeamZ</ins>
             </i></b>.
         </p>
         <p>Das <b><i>
             <ins>TeamZ</ins>
-        </i></b> hat sich als Ziel gesetzt unsere Kunden jeden wunsch von den Augen
-            ab zu lesen & nichts, wirklich kein wunsch unbeantwortet zu lassen!
+        </i></b> hat sich als Ziel gesetzt, unsere Kunden jeden Wunsch von den Augen
+            abzulesen & nichts, wirklich kein Wunsch, unbeantwortet zu lassen!
         </p>
         <ol>
-            <li>Junges Starkes Studenten Team</li>
+            <li>junges starkes Studenten Team</li>
             <li>Preis / Leistung - unschlagbar</li>
-            <li>Charmant & Kommpetent</li>
+            <li>charmant & kommpetent</li>
             <li><b>+ 20% Rabatt auch auf Tiernahrung</b></li>
         </ol>
-        <p>Wenn das nicht überzeugt dann <a href="contact.html">kontaktiere</a> uns, du wirst es nicht bereuhen!</p>
+        <p>Wenn das nicht überzeugt dann <a href="contact.html">kontaktieren</a> Sie uns, Sie werden es nicht bereuen!</p>
     </section>
-    <!-- about -->
+    <!-- / about -->
 
 </article>
-<!-- Content -->
+<!-- / content -->
 
 <hr>
 
-<!-- Footer -->
+<!-- footer -->
 <footer>
     <div align="center">
 
-        <!-- Footer table -->
+        <!-- footer table -->
         <table>
 
-            <!-- Table / Footer Title -->
+            <!-- table / footer title -->
             <caption>Footer Menu</caption>
-            <!-- Table / Footer Title -->
+            <!-- / table / footer title -->
 
             <tr>
                 <th>
@@ -271,6 +281,7 @@ public class WeAreTheBest implements TeamZ {
                     <a href="contact.html">Kontakt</a> <br/>
                 </th>
                 <th>
+                    <!-- contact information -->
                     <address>
                         Gestaltet von <a href="mailto:no-mail@teamz-webstudies.github.io">TeamZ</a>.<br>
                         HTW Berlin<br/>
@@ -279,7 +290,7 @@ public class WeAreTheBest implements TeamZ {
                     </address>
 
                     <button type="button"
-                            onclick="alert('Nice try, aber mehr infos gibt es erst nach dem erstgespräch ;)')">More
+                            onclick="alert('Netter Versuch, aber mehr Infos gibt es erst nach dem Erstgespräch ;)')">More
                         info!
                     </button>
                 </th>
@@ -292,7 +303,7 @@ public class WeAreTheBest implements TeamZ {
                 </th>
             </tr>
         </table>
-        <!-- Footer table -->
+        <!-- / footer table -->
 
         <hr>
 
@@ -304,14 +315,14 @@ public class WeAreTheBest implements TeamZ {
             <p>© 2017 All rights reserved. By <a
                     href="https://teamz-webstudies.github.io/Meilenstein_2/index.html">TeamZ</a>.</p>
         </div>
-        <!--/ copyright -->
+        <!-- / copyright -->
 
     </div>
 </footer>
-<!-- Footer -->
+<!-- / footer -->
 
 </body>
-<!-- html visible content -->
+<!-- / html visible content -->
 
 </html>
-<!-- html document with german content -->
+<!-- / html document with german content -->
