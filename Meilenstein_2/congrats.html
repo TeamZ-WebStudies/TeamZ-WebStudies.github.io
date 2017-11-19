@@ -174,24 +174,30 @@
 <!-- / footer -->
 
 <!-- javascript -->
-<script>
+<script type="text/javascript">
 
-    // get params from url
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    // reading out the cookie values
+    // @param name : the specific name within the cookie
+    function getCookie(name) {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return (value != null) ? unescape(value[1]) : null;
     }
 
-    // generate html tag witch will be filled with the params from the url
-    document.getElementById("firstname").innerHTML = getParameterByName('firstname');
-    document.getElementById("lastname").innerHTML = getParameterByName('lastname');
-    document.getElementById("category").innerHTML = getParameterByName('category');
-    document.getElementById("content").innerHTML = getParameterByName('content');
+    // delete a cookie name
+    // @param name : the specific name within the cookie
+    function deleteCookie(name) {
+        document.cookie = name + "=null; path=/;"
+    }
+
+    // generate html tag witch will be filled with the cookie content
+    document.getElementById("firstname").innerHTML = getCookie("firstname");
+    document.getElementById("lastname").innerHTML = getCookie("lastname");
+    document.getElementById("category").innerHTML = getCookie("category");
+    document.getElementById("content").innerHTML = getCookie("content");
+
+    // deletes the cookie for "content" after all
+    deleteCookie("content");
 
 </script>
 <!-- / javascript -->
