@@ -92,11 +92,8 @@
         function storeValues(form) {
             setCookie("firstname", form.firstname.value);
             setCookie("lastname", form.lastname.value);
-            setCookie("category", form.category.value);
-            setCookie("content", form.content.value);
             return true;
         }
-
 
     </script>
 
@@ -104,7 +101,7 @@
     <!-- on submit, the JS method storeValues() storing the values into the cookies -->
     <!-- and jumps to the "congrats.html" site-->
     <div align="center">
-        <form name="contactForm" method=post action="congrats.html" onsubmit="return storeValues(this);">
+        <form name="contactForm" action="congrats.html" onsubmit="return storeValues(this);">
 
             <!-- caption for input field -->
             <label for="firstname">Vorname</label>
