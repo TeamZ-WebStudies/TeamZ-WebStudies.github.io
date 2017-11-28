@@ -101,7 +101,9 @@
     <!-- on submit, the JS method storeValues() storing the values into the cookies -->
     <!-- and jumps to the "congrats.html" site-->
     <div align="center">
-        <form name="contactForm" action="congrats.html" onsubmit="return storeValues(this);">
+        <!-- action= jumps to the next html site and transfers the form content -->
+        <!-- via the "get" method within the url -->
+        <form name="contactForm" action="congrats.html" method="get" onsubmit="return storeValues(this);">
 
             <!-- caption for input field -->
             <label for="firstname">Vorname</label>
