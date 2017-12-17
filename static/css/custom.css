@@ -1,9 +1,11 @@
 /* page content begin below header */
+/* Abstand nach oben */
 body {
     padding-top: 60px;
 }
 
 /* logo class usage <div class="logo">Team</div> */
+/* kleines TeamZ Logo, ohne Z, definieren der Größe,Farbe,Font */
 .logo {
     font-weight: normal;
     color: #FFFFFF;
@@ -15,13 +17,14 @@ body {
     margin: 0px;
     padding: 0px;
 }
-
+/* Z des Logos, in rot über Pseudoklasse ::after */
 .logo::after {
     content: "Z";
     color: red;
 }
 
 /* logo class usage <div class-big="logo">Team</div> */
+/* großes TeamZ Logo, ohne Z, definieren der Größe,Farbe,Font */
 .logo-big {
     font-weight: normal;
     color: #FFFFFF;
@@ -34,7 +37,7 @@ body {
     margin: 0px;
     padding: 0px;
 }
-
+/* Z des Logos, in rot über Pseudoklasse ::after */
 .logo-big::after {
     content: "Z";
     color: red;
