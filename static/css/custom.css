@@ -1,7 +1,58 @@
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 /* page content begin below header */
 /* Abstand nach oben */
 body {
-    padding-top: 60px;
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 1.6rem;
+    font-family: "Open Sans", sans-serif;
+    color: #888888;
+    background-color: black;
+}
+
+footer {
+    padding-top: 1em;
+}
+
+/* für design angepassten hr tag */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #3c3c3c;
+    margin: 0em;
+    padding: 0;
+}
+
+/* pass automatisch die video größe am displays an */
+video {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* remove bullet points from ul & li tags */
+ul li {
+    list-style: none;
+}
+
+.copyright {
+    padding-top: 20px;
+}
+
+.language-java {
+    border-radius: 25px;
+    padding: 40px;
+}
+
+.default-container {
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 /* logo class usage <div class="logo">Team</div> */
@@ -16,6 +67,7 @@ body {
     line-height: 1;
     margin: 0px;
     padding: 0px;
+    display: inline
 }
 /* Z des Logos, in rot über Pseudoklasse ::after */
 .logo::after {
@@ -42,6 +94,11 @@ body {
     content: "Z";
     color: red;
 }
+
+
+
+
+
 
 .masonry-box {
     border-radius: 25px;
