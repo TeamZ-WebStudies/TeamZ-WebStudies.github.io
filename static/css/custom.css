@@ -1,9 +1,113 @@
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
 /* page content begin below header */
 /* Abstand nach oben */
 body {
-    padding-top: 60px;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 1.6rem;
+    color: #888888;
+    background-color: black;
 }
 
+a {
+    color: #1f79a3;
+    text-decoration: none;
+}
+
+h6 {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 150%;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+footer {
+    padding-top: 1em;
+}
+
+/* für design angepassten hr tag */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #3c3c3c;
+    margin: 0em;
+    padding: 0;
+}
+
+/* pass automatisch die video größe am displays an */
+video {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* remove bullet points from ul & li tags */
+ul li {
+    list-style: none;
+}
+
+/* --------------------------------
+
+CSS Media Queries
+
+-------------------------------- */
+
+/* hide video on mobile devices */
+@media screen and (max-width: 520px) {
+    video {
+        display: none;
+    }
+}
+
+/* hide logo image on devices with big screens */
+@media screen and (min-width: 521px) {
+    #intro-logo {
+        display: none;
+    }
+}
+
+/* --------------------------------
+
+Main Components
+
+-------------------------------- */
+
+.copyright {
+    padding-top: 20px;
+}
+
+.language-java {
+    border-radius: 25px;
+    padding: 40px;
+}
+
+.default-container {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.float-right {
+    float: right;
+}
+
+/* --------------------------------
+
+Logo
+
+-------------------------------- */
 /* logo class usage <div class="logo">Team</div> */
 /* kleines TeamZ Logo, ohne Z, definieren der Größe,Farbe,Font */
 .logo {
@@ -16,7 +120,9 @@ body {
     line-height: 1;
     margin: 0px;
     padding: 0px;
+    display: inline
 }
+
 /* Z des Logos, in rot über Pseudoklasse ::after */
 .logo::after {
     content: "Z";
@@ -37,37 +143,62 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
 /* Z des Logos, in rot über Pseudoklasse ::after */
 .logo-big::after {
     content: "Z";
     color: red;
 }
 
+/* --------------------------------
+
+Masonry Grid
+
+-------------------------------- */
+
 .masonry-box {
     border-radius: 25px;
     background: #2D333A;
-    padding: 40px;
+    padding: 3em;
 }
 
-/* Masonry grid layout */
-.grid-sizer,
+.masonry-button-area {
+    display: flex;
+    justify-content: center;
+}
 
-    /* Masonry item small */
-.grid-item-small {
-    margin: auto auto 10px;
+.masonry-button {
+    padding-left: 20px;
+}
+
+.masonry-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.masonry-item {
+    margin: 0 8px 8px 0;
+}
+
+.masonry-item-100 {
+    flex: auto;
+    height: 100px;
     width: 100px;
 }
 
-/* Masonry item media */
-.grid-item-medium {
-    margin: auto auto 10px;
-    width: 200px;
+.masonry-item-150 {
+    flex: auto;
+    height: 150px;
+    width: 150px;
 }
 
-/* Masonry item big */
-.grid-item-big {
-    margin: auto auto 10px;
-    width: 250px;
+.masonry-item-200 {
+    flex: auto;
+    height: 200px;
+    width: 200px;
 }
 
 /* round corner */
