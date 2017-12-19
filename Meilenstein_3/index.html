@@ -83,12 +83,18 @@
 <section>
     <div>
         <!-- video size, different sources & filetypes, alternative text -->
-        <video width="640" height="480" controls autoplay="autoplay" id="intro_video">
+        <video width="640" height="480" controls id="intro_video">
             <source src="../static/video/720/teamZ_intro.webm" type="video/webm">
             <source src="../static/video/720/teamZ_intro.mp4" type="video/mp4">
             <source src="../static/video/teamZ_intro..ogg" type="video/ogg">
             Hier würde normalerweise ein Video laufen, wenn dein Browser dies nur unterstützen würde :(
         </video>
+    </div>
+
+    <!-- Show Logo on mobile devices instead of video -->
+    <div id="intro-logo" align="center">
+        <!-- logo -->
+        <img src="../static/img/TeamZ-Logo.png">
     </div>
 </section>
 <!-- Intro Video -->
@@ -101,14 +107,14 @@
             <!-- article header -->
             <header>
                 <div align="center">
-                    <h3>Software Entwickler Sudio</h3>
+                    <h6>Software Entwickler Sudio</h6>
                     <p>Coding for Learning</p>
                 </div>
             </header>
             <!-- article header -->
 
             <!-- Intro -->
-            <section id="intro" class="container">
+            <section id="intro" class="container default-container">
 
                 <!-- Quote -->
                 <blockquote cite="https://github.com/TeamZ-WebStudies/TeamZ-WebStudies.github.io">
@@ -126,10 +132,10 @@
             <!-- Intro -->
 
             <!-- You Want Us! -->
-            <section id="yout-want-us" class="container">
+            <section id="yout-want-us" class="container default-container">
 
                 <!-- header level 2 with underline text -->
-                <h2 class="logo">You want u</h2>
+                <h2 class="logo float-right">You want u</h2>
 
                 <p><b>Cheap & Sexy</b> Dev Team</p>
                 <ol>
@@ -171,279 +177,47 @@ public class WeAreTheBest implements TeamZ {
                 </h2>
             </section>
 
-
             <!-- portfolio -->
             <section id="portfolio" class="masonry-box container">
 
-                <h2>Portfolio</h2>
+                <!-- masonry grid header -->
+                <h6>Portfolio</h6>
 
                 <!-- masonry grid check boxen -->
-                <div class="btn-toolbar filters">
-                    <div data-toggle="buttons" class="btn-group">
-                        <label class="btn btn-default">
-                            <input type="checkbox" value="Professional">
+                <div class="masonry-button-area container">
+
+                    <div class="masonry-button">
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                                autocomplete="off" id="btn-Professional">
                             Professional
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="checkbox" value="Charming">
+                        </button>
+                    </div>
+
+                    <div class="masonry-button">
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                                autocomplete="off" id="btn-Charming">
                             Charming
-                        </label>
-                        <label class="btn btn-default">
-                            <input type="checkbox" value="Sexy">
+                        </button>
+                    </div>
+
+                    <div class="masonry-button">
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                                autocomplete="off" id="btn-Sexy">
                             Sexy
-                        </label>
+                        </button>
                     </div>
-                    <div data-toggle="buttons" class="btn-group">
-                        <label class="btn btn-default">
-                            <input type="checkbox" value="all_images">
-                            All
-                        </label>
-                    </div>
+
                 </div>
                 <!-- masonry grid check boxen -->
 
-                <br/>
-
                 <!-- masonry grid -->
-                <div id="masonryContainer" class="row">
+                <div class="masonry-grid">
 
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=111">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=112">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=113">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=114">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=115">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-big">
-                            <img class="round-corner" src="https://picsum.photos/250/250/?image=116">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=117">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=118">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=119">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-big">
-                            <img class="round-corner" src="https://picsum.photos/250/250/?image=120">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=121">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=121">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=122">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=123">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-big">
-                            <img class="round-corner" src="https://picsum.photos/250/250/?image=124">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=125">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=126">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-big">
-                            <img class="round-corner" src="https://picsum.photos/250/250/?image=127">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-big">
-                            <img class="round-corner" src="https://picsum.photos/250/250/?image=128">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=129">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=130">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=131">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=132">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=133">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=134">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=135">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-big">
-                            <img class="round-corner" src="https://picsum.photos/250/250/?image=136">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Charming -->
-                    <div class="Charming portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=137">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=139">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=140">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=141">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Sexy -->
-                    <div class="Sexy portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-medium">
-                            <img class="round-corner" src="https://picsum.photos/200/200/?image=142">
-                        </div>
-                    </div>
-
-                    <!-- masonry item category Professional -->
-                    <div class="Professional portfolio all_images col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="grid-item-small">
-                            <img class="round-corner" src="https://picsum.photos/100/100/?image=143">
-                        </div>
-                    </div>
 
                 </div>
                 <!-- masonry grid -->
-
 
             </section>
-            <!-- portfolio -->
 
             <!-- about -->
             <section id="about" class="default-container container">
@@ -579,6 +353,84 @@ public class WeAreTheBest implements TeamZ {
 <script>
     /* remove control bar */
     document.getElementById("intro_video").controls = false;
+
+    /* Masonary grid */
+
+    // create random size
+    function getRandomSize() {
+        // create random number
+        const random = Math.floor((Math.random() * 3) + 1);
+
+        // convert number into a color string
+        switch (random) {
+            case 1:
+                return 100;
+            case 2:
+                return 150;
+            case 3:
+                return 200;
+        }
+    }
+
+    // create random category
+    function getCategory(id) {
+        // create random number
+        const category = id % 3;
+
+        // convert number into a color string
+        switch (category) {
+            case 0:
+                return "Professional";
+            case 1:
+                return "Charming";
+            case 2:
+                return "Sexy";
+        }
+    }
+
+    // create 30 images
+    for (i = 0; i < 30; i++) {
+        // create random image
+        addMasonaryItem({
+            "image_id": i,
+            "size": getRandomSize(),
+            "category": getCategory(i)
+        });
+    }
+
+    // render masonary grid items
+    function addMasonaryItem(masonaryItem) {
+        $(".masonry-grid").append("" +
+            "<!-- masonry item category " + masonaryItem["category"] + " -->" +
+            "<div class='" + masonaryItem["category"] + " masonry-item masonry-item-" + masonaryItem["size"] + "'>" +
+            "<img class='round-corner' src='https://picsum.photos/" + masonaryItem["size"] + "/" + masonaryItem["size"] + "/?image=" + masonaryItem["image_id"] + "'> " +
+            "</div>"
+        );
+    }
+
+    // set buttons functions
+    $(document).ready(function () {
+        $('#btn-Professional').click(btnChangeState("Professional"));
+    });
+
+    // set buttons functions
+    $(document).ready(function () {
+        $('#btn-Charming').click(btnChangeState("Charming"));
+    });
+
+    // set buttons functions
+    $(document).ready(function () {
+        $('#btn-Sexy').click(btnChangeState("Sexy"));
+    });
+
+    // switch masonary items between show & hide
+    function btnChangeState(category) {
+        return function () {
+            $("." + category).toggle();
+        }
+    }
+
+
 </script>
 </body>
 </html>
