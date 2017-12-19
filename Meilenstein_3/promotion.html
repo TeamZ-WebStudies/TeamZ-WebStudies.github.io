@@ -46,36 +46,49 @@
 <!-- html visible content -->
 <body>
 
-<!-- Header in document center -->
-<div align="center">
+<!-- Fixed navbar -->
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-dark navbar-dark navbar-fixed-top navbar-custom">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarsHamburger" aria-controls="navbarsHamburger" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+            <p class="logo">Team</p>
+        </a>
 
-    <!-- Logo & Subtitle -->
-    <img src="../static/img/TeamZ-Logo.png">
-    <h2>Software Development Studio with Charm</h2>
-    <!-- Title & Subtitle -->
+        <div class="collapse navbar-collapse" id="navbarsHamburger">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#yout-want-us">You Want Us!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">Über uns</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Angebote</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Web Entwicklung</a>
+                        <a class="dropdown-item" href="#">Desktop App</a>
+                        <a class="dropdown-item" href="#">Mobile App</a>
+                        <a class="dropdown-item" href="promotion.html">Angebote</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+</header>
+<!-- Fixed navbar -->
 
-    <!-- break line -->
-    <br/>
-
-    <!-- Main Menu in a table -->
-    <table>
-        <!-- table row with 6 column-->
-        <tr>
-            <th><a href="index.html" title="Home">Home</a></th>
-            <th><a href="#promo_webdev" title="Web Entwicklung">Web Entwicklung</a></th>
-            <th><a href="#promo_desktop" title="Desktop App">Desktop App</a></th>
-            <th><a href="#promo_mobile" title="Mobile App">Mobile App</a></th>
-            <th><a href="promotion.html" title="Angebote">Angebote</a></th>
-            <th><a href="contact.html" title="Kontakt">Kontakt</a></th>
-        </tr>
-        <!-- table row -->
-    </table>
-    <!-- Main Menu -->
-
-</div>
-<!-- Header -->
-
-<hr>
 
 <!-- Content -->
 <article>
