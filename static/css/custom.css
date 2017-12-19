@@ -69,6 +69,7 @@ CSS Media Queries
 @media screen and (max-width: 520px) {
     video {
         display: none;
+
     }
 }
 
