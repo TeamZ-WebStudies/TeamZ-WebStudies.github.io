@@ -86,13 +86,38 @@
             <br/>
         </div>
     </header>
-    <!-- article header -->
+    <!-- / article header -->
+
+    <script type="text/javascript">
+
+        // set the cookie values
+        // @param name : the specific name within the cookie
+        // @param value: the value
+        function setCookie(name, value) {
+            document.cookie = name + "=" + escape(value) + "; path=/";
+        }
+
+        // stores the values from a form into the cookies
+        // @param from: the form
+        function storeValues(form) {
+            setCookie("firstname", form.firstname.value);
+            setCookie("lastname", form.lastname.value);
+            return true;
+        }
+
+    </script>
 
     <!-- contact form -->
+    <!-- on submit, the JS method storeValues() storing the values into the cookies -->
+    <!-- and jumps to the "congrats.html" site-->
     <div align="center">
-        <form action="congrats.html">
+        <!-- action= jumps to the next html site and transfers the form content -->
+        <!-- via the "get" method within the url -->
+        <form name="contactForm" action="congrats.html" method="get" onsubmit="return storeValues(this);">
 
+            <!-- caption for input field -->
             <label for="firstname">Vorname</label>
+            <!-- data field, user can type some input here -->
             <input type="text" id="firstname" name="firstname" placeholder="Dein Name..">
 
             <br/>
@@ -122,7 +147,7 @@
     </div>
     <!-- contact form -->
 
-    <!-- promo_webdev -->
+    <!-- promo_webdev section with id -->
     <section id="promo_webdev">
         <!-- image with caption -->
         <div align="center">
@@ -238,7 +263,27 @@
 
     </div>
 </footer>
-<!-- Footer -->
+<!-- / footer -->
+
+<script type="text/javascript">
+
+    // Original JavaScript code by Chirp Internet: www.chirp.com.au
+    // Please acknowledge use of this code by including this header.
+
+    // reading out the cookie values
+    // @param name : the specific name within the cookie
+    function getCookie(name) {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return (value != null) ? unescape(value[1]) : null;
+    }
+
+    // "Remember function":
+    // if already entered some values within the fiels "Vorname" and "Familien Name"
+    // set the fields from the cookies
+    if (firstname = getCookie("firstname")) document.contactForm.firstname.value = firstname;
+    if (lastname = getCookie("lastname")) document.contactForm.lastname.value = lastname;
+</script>
 
 </body>
 <!-- html visible content -->
