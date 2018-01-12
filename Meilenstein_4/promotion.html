@@ -89,6 +89,58 @@
 </header>
 <!-- Fixed navbar -->
 
+<!-- add-portfolio-form -->
+<div class="add-portfolio-form container">
+    <div class="row">
+        <h2>Neues Angebot hochladen</h2>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="form-titel">Titel</label>
+            <input type="text" class="form-control" id="form-titel" name="Titel" placeholder="Titel">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="form-content">Content</label>
+            <input type="text" class="form-control" id="form-content" name="Content"
+                   placeholder="Content">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="form-imgurl">imgurl</label>
+            <input type="url" class="form-control" id="form-imgurl" name="imgurl"
+                   placeholder="Bild-Link">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="form-imgtext">imgtext</label>
+            <input type="text" class="form-control" id="form-imgtext" name="imgtext"
+                   placeholder="Bildbeschreibung">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                        autocomplete="off" id="btn-submit">
+                    Angebot hochladen
+                </button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                        autocomplete="off" id="btn-reset">
+                    Angebote neu laden
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Content -->
 <article>
@@ -101,80 +153,10 @@
     </header>
     <!-- article header -->
 
-    <!-- promo_webdev -->
-    <section id="promo_webdev">
-        <!-- image with caption -->
-        <div align="center">
+    <!-- portfolio from rest api -->
+    <div class="portfolio">
 
-            <h2>Websites in HTML5 & sexy CSS</h2>
-
-            <figure>
-                <img src="../static/img/portfolio/code-2620118_640.jpg" alt="Code with the best" width="640"
-                     height="426">
-                <figcaption>
-                    <a about="_blank" href="https://pixabay.com/en/code-coding-programming-css-2620118/">StockSnap
-                        @ pixabay.com </a>
-                </figcaption>
-            </figure>
-
-            <summary>
-                Wir arbeiten State-of-Art mit den effektivsten Tools zum schnellen & Professionellen
-                coden um Ihnen die besten Produkte zu erstellen, damit Sie weniger arbeiten müssen ;)
-            </summary>
-
-        </div>
-        <!-- image with caption -->
-    </section>
-    <!-- promo_webdev -->
-
-    <!-- promo_desktop -->
-    <section id="promo_desktop">
-        <!-- image with caption -->
-        <div align="center">
-
-            <h2>Desktop Apps mit charm</h2>
-
-            <figure>
-                <img src="../static/img/portfolio/tree-2647471_640.png" alt="Skills" width="640"
-                     height="452">
-                <figcaption>
-                    <a about="_blank" href="https://pixabay.com/en/tree-structure-networks-internet-2647471/">geralt
-                        @ pixabay.com </a>
-                </figcaption>
-            </figure>
-
-            <summary>
-                Egal welche Anforderungen Sie haben, wir haben das Know-How Ihnen ihre Träume & wünsche
-                zu erfüllen!
-            </summary>
-
-        </div>
-        <!-- image with caption -->
-    </section>
-    <!-- promo_desktop -->
-
-    <!-- promo_mobile -->
-    <section id="promo_mobile">
-        <!-- image with caption -->
-        <div align="center">
-
-            <h2>Smarte mobile Apps</h2>
-
-            <figure>
-                <img src="../static/img/portfolio/mockup-2824850_640.jpg" alt="Code with the best" width="640"
-                     height="426">
-                <figcaption>
-                    <a about="_blank" href="https://pixabay.com/en/mockup-design-device-own-layout-2824850/">ptra
-                        @ pixabay.com </a>
-                </figcaption>
-            </figure>
-
-            <summary>Desktop, Mobil, Server oder Websites. Wir bedienen alles!</summary>
-
-        </div>
-        <!-- image with caption -->
-    </section>
-    <!-- promo_mobile -->
+    </div>
 
 </article>
 <!-- Content -->
@@ -261,6 +243,132 @@
     </div>
 </footer>
 <!-- Footer -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script>
+    // restore portfolio from localStorage
+    var portfolio = localStorage.getItem('teamzPorfolio');
+
+    // if localStorage was empty, load portfolio from rest api
+    if (this.portfolio == undefined) {
+        console.log("load from rest api");
+        this.portfolio = [];
+        loadPortfolioFromRestApi();
+        console.log(portfolio);
+    } else {
+        // pare json
+        console.log("load from local storage");
+        this.portfolio = JSON.parse(portfolio);
+        fillPortfolio();
+    }
+
+    // save portfolio in local storage
+    function savePortfolio() {
+        localStorage.setItem('teamzPorfolio', JSON.stringify(this.portfolio));
+    }
+
+    // load portfolio from rest api
+    function loadPortfolioFromRestApi() {
+        $.getJSON("https://meilensteinvierx.herokuapp.com/all",
+            function (data) {
+                $.each(data, function (key, val) {
+                    addElement(val);
+                    addPortfolioItemToHtml(val);
+                });
+            });
+    }
+
+    // add rest element to portfolio
+    function addElement(element) {
+        this.portfolio.push(element);
+    }
+
+    // fill portfolio div
+    function fillPortfolio() {
+        for (i = 0; i < this.portfolio.length; i++) {
+            addPortfolioItemToHtml(this.portfolio[i]);
+        }
+    }
+
+    // render portfolio
+    function addPortfolioItemToHtml(portfolioItem) {
+        $(".portfolio").append("" +
+            '<!-- promo_desktop -->\n' +
+            '    <div class="portfolio-' + portfolioItem["id"] + '">\n' +
+            '        <!-- image with caption -->\n' +
+            '        <div align="center">\n' +
+            '\n' +
+            '            <h2>' + portfolioItem["title"] + '</h2>\n' +
+            '\n' +
+            '            <figure>\n' +
+            '                <img src="../static/img/portfolio/tree-2647471_640.png" width="640"\n' +
+            '                     height="452">\n' +
+            '                <figcaption>\n' +
+            '                    <a about="_blank" href="' + portfolioItem["imgurl"] + '">' +
+            '                        ' + portfolioItem["imgtext"] + '</a>\n' +
+            '                </figcaption>\n' +
+            '            </figure>\n' +
+            '\n' +
+            '            <summary>\n' + portfolioItem["content"] +
+            '            </summary>\n' +
+            '\n' +
+            '        </div>\n' +
+            '        <!-- image with caption -->\n' +
+            '    </div>\n' +
+            '    <!-- promo_desktop -->'
+        );
+
+        savePortfolio();
+    }
+
+    // delete local storgae for portfolio & reload rest request
+    function reloadPorfolio() {
+
+        // remove all portfolio cards
+        for (i = 0; i < this.portfolio.length; i++) {
+            $(".portfolio-" + this.portfolio[i]['id']).remove();
+        }
+
+        localStorage.removeItem("teamzPorfolio");
+        loadPortfolioFromRestApi();
+    }
+
+    // reload rest request & reset local storage
+    $("#btn-reset").click(function () {
+        reloadPorfolio();
+    });
+
+    // reload rest request & reset local storage
+    $("#btn-submit").click(function () {
+
+        const random = Math.floor((Math.random() * 99999) + 1);
+
+        // this.portfolio.length
+        var newElement = {
+            'id': random,
+            'title': $('#form-titel').val(),
+            'content': $('#form-content').val(),
+            'imgurl': $('#form-imgurl').val(),
+            'imgtext': $('#form-imgtext').val()
+        }
+
+        addElement(newElement);
+        addPortfolioItemToHtml(newElement);
+    });
+
+
+</script>
 
 </body>
 <!-- html visible content -->

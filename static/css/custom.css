@@ -104,6 +104,20 @@ Main Components
     float: right;
 }
 
+.add-portfolio-form {
+    border-radius: 25px;
+    background: #2D333A;
+    padding: 3em;
+    margin: 3em auto;
+    text-align: center;
+}
+
+.form-group {
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+}
+
 /* --------------------------------
 
 Logo
