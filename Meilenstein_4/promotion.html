@@ -89,11 +89,11 @@
 </header>
 <!-- Fixed navbar -->
 
-<div class=" add-portfolio-form container">
-    <div class="container form-group">
+<div class="add-portfolio-form container">
+    <div class="container default-container">
         <button type="button" class="btn btn-primary spoiler-trigger" data-toggle="collapse">Toggler</button>
     </div>
-    <div class="out collapse in">
+    <div class="out collapse in def">
         <div class="container">
             <div class="row">
                 <h2>Neues Angebot hochladen</h2>
@@ -294,13 +294,22 @@
 
     // load portfolio from rest api
     function loadPortfolioFromRestApi() {
-        $.getJSON("https://meilensteinvierx.herokuapp.com/all",
-            function (data) {
+        $.ajax({
+            url: "https://meilensteinvier.herokuapp.com/all",
+            dataType: 'json',
+            timeout: 3000, //3 second timeout
+            success: function(data) {
                 $.each(data, function (key, val) {
                     addElement(val);
                     addPortfolioItemToHtml(val);
                 });
-            });
+            },
+            error: function(jqXHR, status, errorThrown){   //the status returned will be "timeout"
+                startClockTimer();
+            }
+        });
+
+        removeClockTimer();
     }
 
     // add rest element to portfolio
@@ -394,6 +403,33 @@
         $(this).parent().next().collapse('toggle');
     });
 
+    // start timer
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function startClockTimer() {
+        $(".add-portfolio-form").append('' +
+            '<div class="container server-starting">\n' +
+            '        <h2 class="container">Server is starting:</h2>\n' +
+            '        <h3 class="timer"></h3>\n' +
+            '        <p>Sekunden</p>\n' +
+            '    </div>'
+        );
+
+        for (i = 50; i >= 0; i--) {
+            $( ".timer" ).text(i);
+            await sleep(1000); // wait 1 seconds
+        }
+
+        // removeClockTimer();
+        loadPortfolioFromRestApi();
+
+    }
+
+    // start timer
+    function removeClockTimer() {
+        $(".server-starting").remove();
+    }
 
 </script>
 
