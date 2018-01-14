@@ -89,58 +89,72 @@
 </header>
 <!-- Fixed navbar -->
 
-<!-- add-portfolio-form -->
-<div class="add-portfolio-form container">
-    <div class="row">
-        <h2>Neues Angebot hochladen</h2>
+<div class=" add-portfolio-form container">
+    <div class="container form-group">
+        <button type="button" class="btn btn-primary spoiler-trigger" data-toggle="collapse">Toggler</button>
     </div>
-    <div class="row">
-        <div class="form-group">
-            <label for="form-titel">Titel</label>
-            <input type="text" class="form-control" id="form-titel" name="Titel" placeholder="Titel">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <label for="form-content">Content</label>
-            <input type="text" class="form-control" id="form-content" name="Content"
-                   placeholder="Content">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <label for="form-imgurl">imgurl</label>
-            <input type="url" class="form-control" id="form-imgurl" name="imgurl"
-                   placeholder="Bild-Link">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            <label for="form-imgtext">imgtext</label>
-            <input type="text" class="form-control" id="form-imgtext" name="imgtext"
-                   placeholder="Bildbeschreibung">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6">
-            <div class="form-group">
-                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
-                        autocomplete="off" id="btn-submit">
-                    Angebot hochladen
-                </button>
+    <div class="out collapse in">
+        <div class="container">
+            <div class="row">
+                <h2>Neues Angebot hochladen</h2>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
-                        autocomplete="off" id="btn-reset">
-                    Angebote neu laden
-                </button>
+            <div class="row">
+                <div class="form-group">
+                    <label for="form-titel">Titel</label>
+                    <input type="text" class="form-control" id="form-titel" name="Titel" placeholder="Titel">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="form-content">Content</label>
+                    <input type="text" class="form-control" id="form-content" name="Content"
+                           placeholder="Content">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="form-imgurl">Bild URL</label>
+                    <input type="url" class="form-control" id="form-imgurl" name="imgurl"
+                           placeholder="Bild-URL">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="form-link">Bild Quelle</label>
+                    <input type="url" class="form-control" id="form-link" name="imgurl"
+                           placeholder="Bild-Link">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="form-imgtext">Bild Text</label>
+                    <input type="text" class="form-control" id="form-imgtext" name="imgtext"
+                           placeholder="Bildbeschreibung">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                                autocomplete="off" id="btn-submit">
+                            Angebot hochladen
+                        </button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"
+                                autocomplete="off" id="btn-reset">
+                            Angebote neu laden
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Content -->
 <article>
@@ -312,10 +326,10 @@
             '            <h2>' + portfolioItem["title"] + '</h2>\n' +
             '\n' +
             '            <figure>\n' +
-            '                <img src="../static/img/portfolio/tree-2647471_640.png" width="640"\n' +
+            '                <img src="'+portfolioItem["imgurl"]+'" width="640"\n' +
             '                     height="452">\n' +
             '                <figcaption>\n' +
-            '                    <a about="_blank" href="' + portfolioItem["imgurl"] + '">' +
+            '                    <a about="_blank" href="' + portfolioItem["imglink"] + '">' +
             '                        ' + portfolioItem["imgtext"] + '</a>\n' +
             '                </figcaption>\n' +
             '            </figure>\n' +
@@ -360,11 +374,24 @@
             'title': $('#form-titel').val(),
             'content': $('#form-content').val(),
             'imgurl': $('#form-imgurl').val(),
-            'imgtext': $('#form-imgtext').val()
+            'imgtext': $('#form-imgtext').val(),
+            'imglink': $('#form-link').val()
         }
+
+        $.ajax("https://meilensteinvierx.herokuapp.com/newProduct", {
+            data: JSON.stringify(newElement),
+            contentType: 'application/json',
+            type: 'POST'
+        });
+
 
         addElement(newElement);
         addPortfolioItemToHtml(newElement);
+    });
+
+    // spoiler
+    $(".spoiler-trigger").click(function() {
+        $(this).parent().next().collapse('toggle');
     });
 
 
