@@ -325,7 +325,7 @@
 
     // render portfolio
     function addPortfolioItemToHtml(portfolioItem) {
-        $(".portfolio").append("" +
+        $(".portfolio").hide().fadeIn("slow").append("" +
             '<!-- promo_desktop -->\n' +
             '    <div class="portfolio-' + portfolioItem["id"] + '">\n' +
             '        <!-- image with caption -->\n' +
@@ -374,7 +374,7 @@
     // reload rest request & reset local storage
     $("#btn-submit").click(function () {
 
-        const random = Math.floor((Math.random() * 99999) + 1);
+        const random = Math.floor((Math.random() * 99999) + 5);
 
         // this.portfolio.length
         var newElement = {
@@ -389,7 +389,36 @@
         $.ajax("https://meilensteinvierx.herokuapp.com/newProduct", {
             data: JSON.stringify(newElement),
             contentType: 'application/json',
-            type: 'POST'
+            type: 'POST',
+            timeout: 3000, //3 second timeout
+            success: function() {
+                console.log("api post success");
+
+                $(".add-portfolio-form").prepend('' +
+                    '<div class="alert alert-success upload-success" role="alert">Danke, wir haben Ihr Angebot erhalten :)</div>'
+                )
+                    .delay(5000)
+                    .queue(function() {
+                        $(".upload-success").fadeOut("normal", function() {
+                            $(".upload-success").remove();
+                        });
+                    });
+            },
+            error: function(jqXHR, status, errorThrown){
+                console.log("api post error");
+
+                $(".add-portfolio-form").prepend('' +
+                    '<div class="alert alert-danger upload-error" role="alert">' +
+                    'Es gab ein Fehler während des Hochladens, bitte versuchen Sie es später noch ein mal. Danke :)' +
+                    '</div>'
+                )
+                    .delay(5000)
+                    .queue(function() {
+                        $(".upload-error").fadeOut("normal", function() {
+                            $(".upload-error").remove();
+                        });
+                    });
+            }
         });
 
 
