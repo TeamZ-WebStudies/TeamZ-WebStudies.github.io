@@ -99,34 +99,34 @@
                 <h2>Neues Angebot hochladen</h2>
             </div>
             <div class="row">
-                <div class="form-group">
+                <div class="form-group form-title">
                     <label for="form-titel">Titel</label>
                     <input type="text" class="form-control" id="form-titel" name="Titel" placeholder="Titel">
                 </div>
             </div>
             <div class="row">
-                <div class="form-group">
+                <div class="form-group form-content">
                     <label for="form-content">Content</label>
                     <input type="text" class="form-control" id="form-content" name="Content"
                            placeholder="Content">
                 </div>
             </div>
             <div class="row">
-                <div class="form-group">
+                <div class="form-group form-imgurl">
                     <label for="form-imgurl">Bild URL</label>
                     <input type="url" class="form-control" id="form-imgurl" name="imgurl"
                            placeholder="Bild-URL">
                 </div>
             </div>
             <div class="row">
-                <div class="form-group">
+                <div class="form-group form-link">
                     <label for="form-link">Bild Quelle</label>
                     <input type="url" class="form-control" id="form-link" name="imgurl"
                            placeholder="Bild-Link">
                 </div>
             </div>
             <div class="row">
-                <div class="form-group">
+                <div class="form-group form-imgtext">
                     <label for="form-imgtext">Bild Text</label>
                     <input type="text" class="form-control" id="form-imgtext" name="imgtext"
                            placeholder="Bildbeschreibung">
@@ -374,56 +374,122 @@
     // reload rest request & reset local storage
     $("#btn-submit").click(function () {
 
-        const random = Math.floor((Math.random() * 99999) + 5);
+        // remove error messages
+        $(".missing-title").remove();
+        $(".missing-content").remove();
+        $(".missing-imgurl").remove();
+        $(".missing-imgtext").remove();
+        $(".missing-link").remove();
 
-        // this.portfolio.length
-        var newElement = {
-            'id': random,
-            'title': $('#form-titel').val(),
-            'content': $('#form-content').val(),
-            'imgurl': $('#form-imgurl').val(),
-            'imgtext': $('#form-imgtext').val(),
-            'imglink': $('#form-link').val()
+        var varsSet = true;
+
+        if(!$('#form-titel').val()) {
+            $(".form-title").prepend('' +
+                '<div class="alert alert-danger missing-title" role="alert">' +
+                'Bitte Titel angeben!' +
+                '</div>'
+            );
+            varsSet = false;
         }
 
-        $.ajax("https://meilensteinvierx.herokuapp.com/newProduct", {
-            data: JSON.stringify(newElement),
-            contentType: 'application/json',
-            type: 'POST',
-            timeout: 3000, //3 second timeout
-            success: function() {
-                console.log("api post success");
+        if(!$('#form-content').val()) {
+            $(".form-content").prepend('' +
+                '<div class="alert alert-danger missing-content" role="alert">' +
+                'Bitte Inhalt angeben!' +
+                '</div>'
+            );
+            varsSet = false;
+        }
 
-                $(".add-portfolio-form").prepend('' +
-                    '<div class="alert alert-success upload-success" role="alert">Danke, wir haben Ihr Angebot erhalten :)</div>'
-                )
-                    .delay(5000)
-                    .queue(function() {
-                        $(".upload-success").fadeOut("normal", function() {
-                            $(".upload-success").remove();
-                        });
-                    });
-            },
-            error: function(jqXHR, status, errorThrown){
-                console.log("api post error");
-
-                $(".add-portfolio-form").prepend('' +
-                    '<div class="alert alert-danger upload-error" role="alert">' +
-                    'Es gab ein Fehler während des Hochladens, bitte versuchen Sie es später noch ein mal. Danke :)' +
+        if(!$('#form-imgurl').val()) {
+            $(".form-imgurl").prepend('' +
+                '<div class="alert alert-danger missing-imgurl" role="alert">' +
+                'Bitte Bild URL angeben!' +
+                '</div>'
+            );
+            varsSet = false;
+        } else {
+            // check if image url assessable
+            $.get($('#form-imgurl').val()).done(function () {
+            }).fail(function () {
+                $(".form-imgurl").prepend('' +
+                    '<div class="alert alert-danger missing-imgurl" role="alert">' +
+                    'Bild URL kann nicht erreicht werden!' +
                     '</div>'
-                )
-                    .delay(5000)
-                    .queue(function() {
-                        $(".upload-error").fadeOut("normal", function() {
-                            $(".upload-error").remove();
-                        });
-                    });
+                );
+                varsSet = false;
+            });
+        }
+
+        if(!$('#form-imgtext').val()) {
+            $(".form-imgtext").prepend('' +
+                '<div class="alert alert-danger missing-imgtext" role="alert">' +
+                'Bitte Bild Text angeben!' +
+                '</div>'
+            );
+            varsSet = false;
+        }
+
+        if(!$('#form-link').val()) {
+            $(".form-link").prepend('' +
+                '<div class="alert alert-danger missing-link" role="alert">' +
+                'Bitte Bild Link angeben!' +
+                '</div>'
+            );
+            varsSet = false;
+        }
+
+        if(varsSet) {
+            const random = Math.floor((Math.random() * 99999) + 5);
+
+            // this.portfolio.length
+            var newElement = {
+                'id': random,
+                'title': $('#form-titel').val(),
+                'content': $('#form-content').val(),
+                'imgurl': $('#form-imgurl').val(),
+                'imgtext': $('#form-imgtext').val(),
+                'imglink': $('#form-link').val()
             }
-        });
 
+            $.ajax("https://meilensteinvierx.herokuapp.com/newProduct", {
+                data: JSON.stringify(newElement),
+                contentType: 'application/json',
+                type: 'POST',
+                timeout: 3000, //3 second timeout
+                success: function() {
+                    console.log("api post success");
 
-        addElement(newElement);
-        addPortfolioItemToHtml(newElement);
+                    $(".add-portfolio-form").prepend('' +
+                        '<div class="alert alert-success upload-success" role="alert">Danke, wir haben Ihr Angebot erhalten :)</div>'
+                    )
+                        .delay(5000)
+                        .queue(function() {
+                            $(".upload-success").fadeOut("normal", function() {
+                                $(".upload-success").remove();
+                            });
+                        });
+                },
+                error: function(jqXHR, status, errorThrown){
+                    console.log("api post error");
+
+                    $(".add-portfolio-form").prepend('' +
+                        '<div class="alert alert-danger upload-error" role="alert">' +
+                        'Es gab ein Fehler während des Hochladens, bitte versuchen Sie es später noch ein mal. Danke :)' +
+                        '</div>'
+                    )
+                        .delay(5000)
+                        .queue(function() {
+                            $(".upload-error").fadeOut("normal", function() {
+                                $(".upload-error").remove();
+                            });
+                        });
+                }
+            });
+
+            addElement(newElement);
+            addPortfolioItemToHtml(newElement);
+        }
     });
 
     // spoiler
