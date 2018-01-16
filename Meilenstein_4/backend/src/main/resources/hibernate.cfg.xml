@@ -1,0 +1,26 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+        <!-- C A U T I O N -->
+        <!-- PLEASE replace this properties with pseudonyms before publishing -->
+        <property name="hibernate.connection.url"></property>
+        <property name="hibernate.connection.username"></property>
+        <property name="hibernate.connection.password"></property>
+        <!-- PLEASE replace this properties with pseudonyms before publishing -->
+        <!-- C A U T I O N -->
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.jdbc.lob.non_contextual_creation">true</property>
+
+        <property name="hibernate.c3p0.min_size">2</property>
+        <property name="hibernate.c3p0.max_size">3</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <mapping class="noobz.teamz.meilensteinvierx.pojo.Product"/>
+    </session-factory>
+</hibernate-configuration>
