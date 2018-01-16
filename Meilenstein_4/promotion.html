@@ -274,6 +274,9 @@
     // restore portfolio from localStorage
     var portfolio = localStorage.getItem('teamzPorfolio');
 
+    // boolean if api request is in progress
+    var requestRuning = false;
+
     // if localStorage was empty, load portfolio from rest api
     if (this.portfolio == undefined) {
         console.log("load from rest api");
@@ -293,22 +296,29 @@
 
     // load portfolio from rest api
     function loadPortfolioFromRestApi() {
-        this.portfolio = [];
-        $.ajax({
-            url: "https://meilensteinvierx.herokuapp.com/all",
-            dataType: 'json',
-            timeout: 3000, //3 second timeout
-            success: function(data) {
-                $.each(data, function (key, val) {
-                    addElement(val);
-                    addPortfolioItemToHtml(val);
-                });
-            },
-            error: function(jqXHR, status, errorThrown){   //the status returned will be "timeout"
-                startClockTimer();
-                loadPortfolioFromRestApi();
-            }
-        });
+        if(!requestRuning) {
+            requestRuning = true;
+
+            this.portfolio = [];
+            $.ajax({
+                url: "https://meilensteinvierx.herokuapp.com/all",
+                dataType: 'json',
+                timeout: 3000, //3 second timeout
+                success: function (data) {
+                    $.each(data, function (key, val) {
+                        addElement(val);
+                        addPortfolioItemToHtml(val);
+                    });
+                    requestRuning = false;
+                },
+                error: function (jqXHR, status, errorThrown) {   //the status returned will be "timeout"
+                    requestRuning = true;
+                    startClockTimer();
+                }
+            });
+
+            requestRuning = false;
+        }
     }
 
     // add rest element to portfolio
@@ -368,7 +378,9 @@
 
     // reload rest request & reset local storage
     $("#btn-reset").click(function () {
-        reloadPorfolio();
+        if(!requestRuning) {
+            reloadPorfolio();
+        }
     });
 
     // reload rest request & reset local storage
@@ -504,13 +516,13 @@
     async function startClockTimer() {
         $(".add-portfolio-form").append('' +
             '<div class="container server-starting">\n' +
-            '        <h2 class="container">Server is starting:</h2>\n' +
+            '        <h2 class="container">Server fährt hoch, neuer request versuch in:</h2>\n' +
             '        <h3 class="timer"></h3>\n' +
             '        <p>Sekunden</p>\n' +
             '    </div>'
         );
 
-        for (i = 50; i >= 0; i--) {
+        for (i = 10; i >= 0; i--) {
             $( ".timer" ).text(i);
             await sleep(1000); // wait 1 seconds
         }
@@ -521,6 +533,8 @@
     // start timer
     function removeClockTimer() {
         $(".server-starting").remove();
+        requestRuning = false;
+        loadPortfolioFromRestApi();
     }
 
 </script>
